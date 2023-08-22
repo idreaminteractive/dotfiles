@@ -27,18 +27,29 @@ chmod u+x nvim.appimage
 ./squashfs-root/AppRun --version
 sudo mv squashfs-root /
 sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+
 # install lvim
-# curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh -o lunar.sh
-# chmod u+x lunar.sh
-# LV_BRANCH='release-1.3/neovim-0.9' bash ./lunar.sh -y --no-install-dependencies
+curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh -o lunar.sh
+chmod u+x lunar.sh
+LV_BRANCH='release-1.3/neovim-0.9' bash ./lunar.sh -y --no-install-dependencies
 
 # how do we do our OWN nvim setup?
 # git clone from our own thing into config
 # git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 # cp /home/gitpod/.dotfiles/community.lua ~/.config/nvim/lua/plugins/community.lua
 
+cp /home/gitpod/.dotfiles/config.go.lua ~/.config/lvim/config.lua
 
+# goto home
 cd $GITPOD_REPO_ROOT
-# init our tmux 
-tmux 
+
+
+# run any mason installs
+# are there additional _local_ scripts to run in the root.
+# add this as a per repo init (not in gitpod.yml as it may not be there)
+echo "Installing go stuff for lvim"
+lvim --headless -c "MasonInstall gopls golangci-lint-langserver delve goimports gofumpt gomodifytags gotests impl" -c qall
+
+# run tmux
+# tmux 
 
