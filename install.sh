@@ -34,6 +34,9 @@ sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 
 # how do we do our OWN nvim setup?
 # git clone from our own thing into config
+# git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+# cp /home/gitpod/.dotfiles/community.lua ~/.config/nvim/lua/plugins/community.lua
+
 
 cd $GITPOD_REPO_ROOT
 # init our tmux 
