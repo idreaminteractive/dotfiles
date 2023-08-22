@@ -28,9 +28,12 @@ chmod u+x nvim.appimage
 sudo mv squashfs-root /
 sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 # install lvim
-curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh -o lunar.sh
-chmod u+x lunar.sh
-LV_BRANCH='release-1.3/neovim-0.9' bash ./lunar.sh -y
+# curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh -o lunar.sh
+# chmod u+x lunar.sh
+# LV_BRANCH='release-1.3/neovim-0.9' bash ./lunar.sh -y --no-install-dependencies
+
+# how do we do our OWN nvim setup?
+# git clone from our own thing into config
 
 cd $GITPOD_REPO_ROOT
 # init our tmux 
