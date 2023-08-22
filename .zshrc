@@ -1,0 +1,1 @@
+alias potato=ls -la
