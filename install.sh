@@ -3,6 +3,7 @@
 # get tmux
 sudo apt-get -y install tmux
 
+sudo apt install exa
 # don't run zsh automatically
 export RUNZSH=no
 # install oh-my-zsh
@@ -33,16 +34,12 @@ curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0
 chmod u+x lunar.sh
 LV_BRANCH='release-1.3/neovim-0.9' bash ./lunar.sh -y --no-install-dependencies
 
-# how do we do our OWN nvim setup?
-# git clone from our own thing into config
-# git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-# cp /home/gitpod/.dotfiles/community.lua ~/.config/nvim/lua/plugins/community.lua
-
 cp /home/gitpod/.dotfiles/config.go.lua ~/.config/lvim/config.lua
 
 # goto home
 cd $GITPOD_REPO_ROOT
 
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
 # run any mason installs
 # are there additional _local_ scripts to run in the root.
@@ -51,5 +48,5 @@ echo "Installing go stuff for lvim"
 lvim --headless -c "MasonInstall gopls golangci-lint-langserver delve goimports gofumpt gomodifytags gotests impl" -c qall
 
 # run tmux
-# tmux 
+tmux 
 
