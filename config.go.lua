@@ -1,28 +1,3 @@
--- Add templ configuration.
-local configs = require'lspconfig/configs'
-if not nvim_lsp.templ then
-  configs.templ = {
-    default_config = {
-      cmd = {"templ", "lsp"},
-      filetypes = {'templ'},
-      root_dir = nvim_lsp.util.root_pattern("go.mod", ".git"),
-      settings = {},
-    };
-  }
-end
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'gopls', 'ccls', 'cmake', 'tsserver', 'templ' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-  }
-end
-
 ------------------------
 -- Treesitter
 ------------------------
@@ -37,6 +12,7 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.plugins = {
   "olexsmir/gopher.nvim",
   "leoluz/nvim-dap-go",
+  "joerdav/templ.vim"
 }
 
 ------------------------
@@ -45,7 +21,7 @@ lvim.plugins = {
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "goimports", filetypes = { "go" } },
-  { command = "gofumpt", filetypes = { "go" } },
+  { command = "gofumpt",   filetypes = { "go" } },
 }
 
 lvim.format_on_save = {
@@ -128,3 +104,41 @@ gopher.setup {
 
 vim.wo.relativenumber = true
 vim.wo.number = true
+
+
+
+lsp_manager.setup("templ", {
+  -- on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  cmd = { "templ", "lsp" },
+  filetypes = { 'templ' },
+  root_dir = lvim.lsp.util.root_pattern("go.mod", ".git"),
+  settings = {},
+
+})
+
+
+
+-- local opts = {
+--   default_config = {
+--     cmd = { "templ", "lsp" },
+--     filetypes = { 'templ' },
+--     --       root_dir = nvim_lsp.util.root_pattern("go.mod", ".git"),
+--     settings = {},
+--   },
+
+--   -- settings = {
+--   --   templ = {
+
+
+--   --     cmd = { "templ", "lsp" },
+--   --     filetypes = { 'templ' },
+--   --     -- root_dir = nvim_lsp.util.root_pattern("go.mod", ".git"),
+--   --     -- settings = {},
+--   --   }
+--   -- }
+-- }
+-- -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "templ" })
+-- require("lvim.lsp.manager").setup("templ", opts)

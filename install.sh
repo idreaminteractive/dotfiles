@@ -46,7 +46,12 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 # add this as a per repo init (not in gitpod.yml as it may not be there)
 echo "Installing go stuff for lvim"
 lvim --headless -c "MasonInstall gopls golangci-lint-langserver delve goimports gofumpt gomodifytags gotests impl" -c qall
+# lvim --headless -c "MasonInstall golangci-lint-langserver" -c qall
+
+# go install stuff
+ # go install github.com/go-delve/delve/cmd/dlv@latest
+go install github.com/a-h/templ/cmd/templ@latest
 
 # run tmux
-tmux 
+# tmux 
 
