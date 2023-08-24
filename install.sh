@@ -59,8 +59,10 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 
 # go install stuff
  # go install github.com/go-delve/delve/cmd/dlv@latest
-go install github.com/a-h/templ/cmd/templ@latest
+#go install github.com/a-h/templ/cmd/templ@latest
 
 # run tmux
-tmux 
+#tmux 
+
+# todo - copy across our nvim config bits
 
