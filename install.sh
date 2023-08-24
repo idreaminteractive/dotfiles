@@ -30,11 +30,14 @@ sudo mv squashfs-root /
 sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 
 # install lvim
-curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh -o lunar.sh
-chmod u+x lunar.sh
-LV_BRANCH='release-1.3/neovim-0.9' bash ./lunar.sh -y --no-install-dependencies
+# curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh -o lunar.sh
+# chmod u+x lunar.sh
+# LV_BRANCH='release-1.3/neovim-0.9' bash ./lunar.sh -y --no-install-dependencies
 
-cp /home/gitpod/.dotfiles/config.go.lua ~/.config/lvim/config.lua
+# cp /home/gitpod/.dotfiles/config.go.lua ~/.config/lvim/config.lua
+
+
+# we're doing a custom nvim lesgo.
 
 # goto home
 cd $GITPOD_REPO_ROOT
@@ -44,8 +47,8 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 # run any mason installs
 # are there additional _local_ scripts to run in the root.
 # add this as a per repo init (not in gitpod.yml as it may not be there)
-echo "Installing go stuff for lvim"
-lvim --headless -c "MasonInstall gopls golangci-lint-langserver delve goimports gofumpt gomodifytags gotests impl" -c qall
+# echo "Installing go stuff for lvim"
+# lvim --headless -c "MasonInstall gopls golangci-lint-langserver delve goimports gofumpt gomodifytags gotests impl" -c qall
 # lvim --headless -c "MasonInstall golangci-lint-langserver" -c qall
 
 # go install stuff
@@ -53,5 +56,5 @@ lvim --headless -c "MasonInstall gopls golangci-lint-langserver delve goimports 
 go install github.com/a-h/templ/cmd/templ@latest
 
 # run tmux
-# tmux 
+tmux 
 
