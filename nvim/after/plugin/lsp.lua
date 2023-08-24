@@ -1,5 +1,6 @@
 local lsp = require("lsp-zero")
 
+-- look @ v3 + how recommended is no longer recommended!
 lsp.preset("recommended")
 
 lsp.ensure_installed({
