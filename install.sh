@@ -20,6 +20,9 @@ chmod u+x starship.sh
 
 # use our thing
 cp /home/gitpod/.dotfiles/.zshrc ~
+# ripgrep
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+sudo dpkg -i ripgrep_13.0.0_amd64.deb
 
 # install nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage

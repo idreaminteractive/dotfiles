@@ -1,5 +1,5 @@
 # alias nvim to lunarvim
-alias nvim=lvim
+# alias nvim=lvim
 
 # from default
 export PATH="$PATH:$HOME/.rvm/bin" 
