@@ -44,6 +44,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # we're doing a custom nvim lesgo.
+cp -r /home/gitpod/.dotfiles/nvim ~/.config/nvim
 
 # goto home
 cd $GITPOD_REPO_ROOT
