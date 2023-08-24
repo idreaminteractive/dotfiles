@@ -39,9 +39,6 @@ sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 
 # cp /home/gitpod/.dotfiles/config.go.lua ~/.config/lvim/config.lua
 
-# install packaer
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # we're doing a custom nvim lesgo.
 cp -r /home/gitpod/.dotfiles/nvim ~/.config/nvim
@@ -65,5 +62,4 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 # run tmux
 #tmux 
 
-# todo - copy across our nvim config bits
 
