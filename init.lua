@@ -1,0 +1,2 @@
+require("idream")
+print("hello")
