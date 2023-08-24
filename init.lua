@@ -1,2 +1,1 @@
 require("idream")
-print("hello")
