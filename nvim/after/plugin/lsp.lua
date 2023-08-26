@@ -19,7 +19,8 @@ lsp.configure('lua_ls', {
            }
        }
    }
-})
+}
+)
 
 
 local cmp = require('cmp')
@@ -75,16 +76,16 @@ local lsp_configurations = require('lspconfig.configs')
 if not lsp_configurations.templ then
   lsp_configurations.templ = {
     default_config = {
-      -- name = 'my-new-lsp  ',
+      name = 'templ',
       cmd = {'templ', 'lsp'},
       filetypes = {'templ'},
-      root_dir = require('lspconfig.util').root_pattern('go.mod')
+      root_dir = require('lspconfig.util').root_pattern('go.mod'),
       settings = {}
-    }
+    };
   }
 end
 
-require('lspconfig').my_new_lsp.setup({})
+require('lspconfig').templ.setup({})
 
 vim.diagnostic.config({
     virtual_text = true
