@@ -11,14 +11,15 @@ lsp.ensure_installed({
 
 -- Fix Undefined global 'vim'
 -- lsp.configure('lua-language-server', {
---    settings = {
---        Lua = {
---            diagnostics = {
---                globals = { 'vim' }
---            }
---        }
---    }
--- })
+lsp.configure('lua_ls', {
+   settings = {
+       Lua = {
+           diagnostics = {
+               globals = { 'vim' }
+           }
+       }
+   }
+})
 
 
 local cmp = require('cmp')
@@ -68,6 +69,22 @@ end)
 
 
 lsp.setup()
+
+local lsp_configurations = require('lspconfig.configs')
+
+if not lsp_configurations.templ then
+  lsp_configurations.templ = {
+    default_config = {
+      -- name = 'my-new-lsp  ',
+      cmd = {'templ', 'lsp'},
+      filetypes = {'templ'},
+      root_dir = require('lspconfig.util').root_pattern('go.mod')
+      settings = {}
+    }
+  }
+end
+
+require('lspconfig').my_new_lsp.setup({})
 
 vim.diagnostic.config({
     virtual_text = true
