@@ -6,18 +6,19 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'lua_ls'
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
+-- lsp.configure('lua-language-server', {
+--    settings = {
+--        Lua = {
+--            diagnostics = {
+--                globals = { 'vim' }
+--            }
+--        }
+--    }
+-- })
 
 
 local cmp = require('cmp')
@@ -60,6 +61,11 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+
+
+
+
 
 lsp.setup()
 
