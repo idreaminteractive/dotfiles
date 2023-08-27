@@ -1,6 +1,11 @@
 package components
 
-templ Hello(name string) {
-    <div>Hello, { name }</div>
+import "strconv"
 
+templ Hello(name string) {
+	for i := range [10]int{} {
+		<div>{ strconv.Itoa(i) }</div>
+	}
+	<div>Hello, { name }</div>
 }
+
