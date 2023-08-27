@@ -41,7 +41,7 @@ sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 
 
 # we're doing a custom nvim lesgo.
-cp -r /home/gitpod/.dotfiles/nvim ~/.config/nvim
+cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
 
 # goto home
 cd $GITPOD_REPO_ROOT
