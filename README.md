@@ -4,5 +4,5 @@ Simple dotfiles to use with Gitpod.
 
 # Todo
 
-- Add in some better cli tooling
-- Add in way to do a per repo setup w/ config.lua + whatever is needed w/ `MasonInstall`
+- Better options for handling session and terminal stuff. I like tmux - but not the command shortcuts
+- Revise some of the pre-set motions to feel more natural
