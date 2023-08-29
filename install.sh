@@ -44,7 +44,7 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 
 # run tmux
 # copy our bindings.
-cp .tmux.conf ~/.tmux.conf
+cp -r /home/gitpod/.dotfiles/.tmux.conf ~/.tmux.conf
 
 tmux 
 
