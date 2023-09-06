@@ -186,7 +186,7 @@ vim.wo.number = true
 vim.opt.relativenumber = true
 vim.opt.nu = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 15
 
 vim.opt.colorcolumn = "80"
 -- Enable mouse mode
@@ -279,7 +279,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+  ensure_installed = { 'go', 'lua', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
