@@ -9,7 +9,7 @@ Simple dotfiles to use with Gitpod.
 
 # Reminder Sheet
 
-- `f<char>` - search in line, `;` forward, `,` back
+- `f|F<char>` + `t|T<char>` - search in line, `;` forward, `,` back
 - `_` first char in line
 - `0` start of line
 - `<leader>?` - find recent opened
