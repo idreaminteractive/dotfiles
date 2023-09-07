@@ -26,4 +26,6 @@ Simple dotfiles to use with Gitpod.
 - `<leader>ds` + `<leader>ws` - doc + ws symbols
 - `:Format` - format it
 - `[d` + `]d` - go through diags
+- `gcc` - Comment line (`// ---- `)`
+- `gbc` - Comment block (`/*  ---- */`)
 

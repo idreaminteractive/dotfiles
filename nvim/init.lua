@@ -508,6 +508,7 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+require('Comment').setup()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

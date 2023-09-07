@@ -3,6 +3,11 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-
-    'joerdav/templ.vim',  
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        },
+        lazy = false,
+    }
 }
