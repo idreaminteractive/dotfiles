@@ -49,6 +49,8 @@ cp /home/gitpod/.dotfiles/starship.toml ~/.config/starship.toml
 starship preset bracketed-segments -o ~/.config/starship.toml
 
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # run tmux
 # copy our bindings.
 cp -r /home/gitpod/.dotfiles/.tmux.conf ~/.tmux.conf
