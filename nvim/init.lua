@@ -425,23 +425,6 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
 
-local lsp_configurations = require('lspconfig.configs')
-
-if not lsp_configurations.templ then
-  lsp_configurations.templ = {
-    default_config = {
-      capabilities = capabilities,
-      name = 'templ',
-      cmd = { 'templ', 'lsp' },
-      filetypes = { 'templ' },
-      root_dir = require('lspconfig.util').root_pattern('go.mod'),
-      settings = {}
-    },
-  }
-end
-
-require('lspconfig').templ.setup({})
-
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
@@ -509,6 +492,14 @@ cmp.setup {
   },
 }
 require('Comment').setup()
+
+
+-- vim.map
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+vim.keymap.set('n', 'n', 'nzz')
+vim.keymap.set('n', 'N', 'Nzz')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
