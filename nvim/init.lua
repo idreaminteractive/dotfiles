@@ -500,6 +500,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', 'N', 'Nzz')
+vim.keymap.set('n', "<leader>tc", ":lua require('plugins.others').toggle_completion()<CR>")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
