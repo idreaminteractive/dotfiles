@@ -35,8 +35,8 @@ sudo dpkg -i ripgrep_13.0.0_amd64.deb
 
 
 # we're doing a custom nvim lesgo.
-#cp -r /home/gitpod/.dotfiles/nvim ~/.config/nvim
-cp -r /home/gitpod/.dotfiles/lazyvim ~/.config/nvim
+cp -r /home/gitpod/.dotfiles/nvim ~/.config/nvim
+# cp -r /home/gitpod/.dotfiles/lazyvim ~/.config/nvim
 
 # goto home
 cd $GITPOD_REPO_ROOT
