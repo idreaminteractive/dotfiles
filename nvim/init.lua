@@ -499,7 +499,17 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+-- Setup of custom plugins
 require('Comment').setup()
+require('lualine').setup {
+
+  options = {
+
+    icons_enabled = true,
+
+    theme = 'ayu_mirage',
+  }
+}
 
 
 -- vim.map
