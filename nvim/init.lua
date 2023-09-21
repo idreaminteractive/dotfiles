@@ -387,9 +387,9 @@ local on_attach = function(_, bufnr)
   end, '[W]orkspace [L]ist Folders')
 
   -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    vim.lsp.buf.format()
-  end, { desc = 'Format current buffer with LSP' })
+  -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+  --   vim.lsp.buf.format()
+  -- end, { desc = 'Format current buffer with LSP' })
 end
 
 -- Enable the following language servers
@@ -402,7 +402,15 @@ end
 --  define the property 'filetypes' to the map in question.
 local servers = {
   -- clangd = {},
-  gopls = {},
+  gopls = {
+    experimentalPostfixCompletions = true,
+    analyses = {
+      unusedparams = true,
+      shadow = true,
+    },
+    staticcheck = true,
+
+  },
   -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
@@ -500,7 +508,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', 'N', 'Nzz')
-vim.keymap.set('n', "<leader>tc", ":lua require('cmp').complete()<CR>")
-
+-- vim.keymap.set('n', "<leader>tc", ":lua require('cmp').complete()<CR>")
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

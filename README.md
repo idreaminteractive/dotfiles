@@ -4,10 +4,7 @@ Simple dotfiles to use with Gitpod.
 
 # Todo
 
-- add a close file shortcut
-- Format on save
 - Moving blocks of text
-- tmux pane resizing (not sure if current shortcuts mess with it)
 
 # Reminder Sheet
 
@@ -31,3 +28,5 @@ Simple dotfiles to use with Gitpod.
 - `gbc` - Comment block (`/*  ---- */`)
 - `<C-u>` and `<C-d>` - Page up and down
 - `*` - Select current word and search for it
+- `:bw` - Close buffer
+- `<leader>f` - Format file
