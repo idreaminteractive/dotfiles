@@ -119,7 +119,7 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    main = "ibl", 
+    main = "ibl",
     opts = {},
     -- opts = {
     --   char = '┊',
@@ -405,12 +405,6 @@ end
 local util = require("lspconfig.util")
 local servers = {
   -- clangd = {},
-  templ = { 
-    cmd = { "templ", "lsp", },
-    filetypes = { "templ" },
-    root_dir = util.root_pattern("go.mod"),
-    settings = {},
-  },
   gopls = {
     experimentalPostfixCompletions = true,
     analyses = {
@@ -419,6 +413,11 @@ local servers = {
     },
     staticcheck = true,
 
+  },
+  templ = {
+    -- filetypes = { 'templ' },
+    -- cmd = { 'templ', 'lsp', },
+    -- root_dir = util.root_pattern('go.work', 'go.mod', '.git')
   },
   -- pyright = {},
   -- rust_analyzer = {},
@@ -460,6 +459,19 @@ mason_lspconfig.setup_handlers {
     }
   end
 }
+
+-- manual setup for templ
+-- local util = require("lspconfig.util")
+-- require('lspconfig')['templ'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   settings = {
+--     cmd = { "templ", "lsp" },
+--     root_dir = util.root_pattern("go.mod", ".git"),
+--   },
+--   filetypes = { 'templ' }
+-- }
+
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
@@ -531,3 +543,18 @@ vim.keymap.set('n', 'N', 'Nzz')
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+--
+-- --templ support
+--
+-- local treesitter_parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+-- treesitter_parser_config.templ = {
+--   install_info = {
+--     url = "https://github.com/vrischmann/tree-sitter-templ.git",
+--     files = { "src/parser.c", "src/scanner.c" },
+--     branch = "master",
+--   },
+-- }
+--
+-- vim.treesitter.language.register('templ', 'templ')
+vim.lsp.set_log_level("debug")
