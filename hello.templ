@@ -4,15 +4,15 @@ import "strconv"
 import "fmt"
 
 // this works better than i would expect.
+
 templ hello(name string) {
-    <div>Hello, { name }</div>
-    <ul>
-    for i := 0 ; i <= 10; i ++ {
-        <li>Potato {strconv.Itoa(i)}</li>
-    
-    }
-    </ul>
-    <div>{strconv.Itoa(34)}</div>
-    <div>{fmt.Print}</div>
+	<div>Hello, { name }</div>
+	<ul>
+		for i := 0 ; i <= 10; i ++ {
+			<li>Potato { strconv.Itoa(i) }</li>
+		}
+	</ul>
+	<div>{ strconv.Itoa(34) }</div>
+	<div>{ fmt.Sprintf("hello") }</div>
 }
 

@@ -435,7 +435,7 @@ require('which-key').register({
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
-local util = require('lspconfig.util')
+-- local util = require('lspconfig.util')
 local servers = {
   -- clangd = {},
   gopls = {
@@ -570,3 +570,10 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- dumpTable(configs['templ'], 2)
 
 -- local util = require("lspconfig.util")
+--
+-- pls templ
+vim.filetype.add({
+  extension = {
+    templ = 'templ',
+  }
+})
