@@ -59,6 +59,10 @@ nvim --headless "+Lazy! sync" +qa
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+
+# add some other bits
+go install github.com/a-h/templ/cmd/templ@latest
+
 # run tmux
 # copy our bindings.
 cp -r /home/gitpod/.dotfiles/.tmux.conf ~/.tmux.conf
