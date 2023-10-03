@@ -3,11 +3,4 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-	-- {
-	--
-	-- 'stevearc/conform.nvim',
-	--
-	-- opts = {},
-	--
-	-- }
 }

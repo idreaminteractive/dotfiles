@@ -205,9 +205,16 @@ require('lazy').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = false
+vim.o.incsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
+vim.opt.relativenumber = true
+vim.opt.nu = true
+
+vim.opt.scrolloff = 15
+
+vim.opt.colorcolumn = "80"
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -577,11 +584,3 @@ vim.filetype.add({
     templ = 'templ',
   }
 })
-
--- require("conform").setup({
---
---   formatters_by_ft = {
---
---     templ = { "templ" },
---   }
--- })
