@@ -1,0 +1,17 @@
+package main
+
+import "strconv"
+
+
+// this works better than i would expect.
+templ hello(name string) {
+    <div>Hello, { name }</div>
+    <ul>
+    for i := 0 ; i <= 10; i ++ {
+        <li>Potato {strconv.Itoa(i)}</li>
+    
+    }
+    </ul>
+    <div>{strconv.Itoa(34)}</div>
+}
+

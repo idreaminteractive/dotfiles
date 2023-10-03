@@ -402,6 +402,7 @@ end
 --  define the property 'filetypes' to the map in question.
 local servers = {
   -- clangd = {},
+  templ = {},
   gopls = {
     experimentalPostfixCompletions = true,
     analyses = {
