@@ -39,7 +39,8 @@ sudo dpkg -i ripgrep_13.0.0_amd64.deb
 # we're going to try nvim chad pls 
 
 
-cp -r /home/gitpod/.dotfiles/chad ~/.config/nvim
+#cp -r /home/gitpod/.dotfiles/chad ~/.config/nvim
+cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
 # cp -r /home/gitpod/.dotfiles/lazyvim ~/.config/nvim
 
 # goto home
@@ -53,6 +54,8 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 cp /home/gitpod/.dotfiles/starship.toml ~/.config/starship.toml
 starship preset bracketed-segments -o ~/.config/starship.toml
 
+
+nvim --headless "+Lazy! sync" +qa
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
