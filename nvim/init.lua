@@ -119,10 +119,12 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    main = "ibl", 
+    opts = {},
+    -- opts = {
+    --   char = '┊',
+    --   show_trailing_blankline_indent = false,
+    -- },
   },
 
   -- "gc" to comment visual regions/lines
@@ -400,9 +402,15 @@ end
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
+local util = require("lspconfig.util")
 local servers = {
   -- clangd = {},
-  templ = {},
+  templ = { 
+    cmd = { "templ", "lsp", },
+    filetypes = { "templ" },
+    root_dir = util.root_pattern("go.mod"),
+    settings = {},
+  },
   gopls = {
     experimentalPostfixCompletions = true,
     analyses = {
