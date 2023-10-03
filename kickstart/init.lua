@@ -458,11 +458,13 @@ require('which-key').register({
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
-local util = require('lspconfig.util')
+-- local util = require('lspconfig.util')
 local servers = {
   -- clangd = {},
   gopls = {
   },
+  templ =
+  { filetypes = { 'templ' } },
   -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
@@ -479,7 +481,7 @@ local servers = {
 -- Setup neovim lua configuration
 require('neodev').setup()
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+-- nvim-cmp supports additional completion capabilities, so broadcast that to serversiniini
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
