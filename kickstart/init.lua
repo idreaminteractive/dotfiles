@@ -314,7 +314,7 @@ vim.defer_fn(function()
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
 
-    highlight = { enable = true },
+    highlight = { enable = true, additional_vim_regex_highlighting = false },
     indent = { enable = true },
     incremental_selection = {
       enable = true,
@@ -449,13 +449,6 @@ local servers = {
   },
   --
   templ = {
-    -- cmd = { "templ", "lsp", },
-    --
-    -- filetypes = { "templ" },
-    --
-    -- root_dir = util.root_pattern("go.mod", ".git"),
-
-    -- settings = {},
   },
   -- pyright = {},
   -- rust_analyzer = {},
@@ -567,9 +560,9 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 --     branch = "master",
 --   },
 -- }
-
 --
-
+-- --
+--
 -- vim.treesitter.language.register('templ', 'templ')
 -- local lspconfig = require("lspconfig")
 
