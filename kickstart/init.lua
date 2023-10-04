@@ -216,6 +216,8 @@ vim.opt.scrolloff = 15
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.guicursor = ""
+
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
