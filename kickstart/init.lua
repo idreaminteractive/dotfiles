@@ -311,12 +311,12 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim' },
+    ensure_installed = { 'go', 'lua', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'html' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
 
-    highlight = { enable = true, additional_vim_regex_highlighting = false },
+    highlight = { enable = true, },
     indent = { enable = true },
     incremental_selection = {
       enable = true,
@@ -579,3 +579,5 @@ vim.filetype.add({
     templ = 'templ',
   }
 })
+
+vim.treesitter.language.register('html', 'templ')
