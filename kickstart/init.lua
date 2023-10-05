@@ -1,20 +1,7 @@
--- local function dumpTable(table, depth)
---   if (depth > 200) then
---     print("Error: Depth > 200 in dumpTable()")
---
---     return
---   end
---
---   for k, v in pairs(table) do
---     if (type(v) == "table") then
---       print(string.rep("  ", depth) .. k .. ":")
---
---       dumpTable(v, depth + 1)
---     else
---       print(string.rep("  ", depth) .. k .. ": ", v)
---     end
---   end
--- end
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 
 
 vim.g.mapleader = ' '
@@ -572,4 +559,26 @@ vim.filetype.add({
   extension = {
     templ = 'templ',
   }
+})
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
+  noremap = true
 })

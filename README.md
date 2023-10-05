@@ -5,6 +5,7 @@ Simple dotfiles to use with Gitpod.
 # Todo
 
 - Moving blocks of text
+- Finding proper shortcuts for harpoon + nvim tree
 
 # Reminder Sheet
 
@@ -29,3 +30,7 @@ Simple dotfiles to use with Gitpod.
 - `*` - Select current word and search for it
 - `:bw` - Close buffer
 - `<leader>f` - Format file
+- `<c-w>` - Window Commands
+- `<c-w>w` - Change windows
+
+

@@ -3,4 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+	-- { "tjdevries/templ.nvim",    lazy = false },
+	{ "nvim-tree/nvim-tree.lua", lazy = false },
+	{ 'ThePrimeagen/harpoon' }
 }
