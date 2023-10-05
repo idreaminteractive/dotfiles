@@ -34,14 +34,9 @@ sudo dpkg -i ripgrep_13.0.0_amd64.deb
  sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 
 
-# we're doing a custom nvim lesgo.
-# cp -r /home/gitpod/.dotfiles/nvim ~/.config/nvim
-# we're going to try nvim chad pls 
 
 
-#cp -r /home/gitpod/.dotfiles/chad ~/.config/nvim
 cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
-# cp -r /home/gitpod/.dotfiles/lazyvim ~/.config/nvim
 
 # goto home
 cd $GITPOD_REPO_ROOT
@@ -56,6 +51,7 @@ starship preset bracketed-segments -o ~/.config/starship.toml
 
 
 nvim --headless "+Lazy! sync" +qa
+nvim --headless "+TSInstall templ" +qa
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
@@ -67,6 +63,5 @@ go install github.com/a-h/templ/cmd/templ@latest
 # copy our bindings.
 cp -r /home/gitpod/.dotfiles/.tmux.conf ~/.tmux.conf
 
-tmux -u
 
 

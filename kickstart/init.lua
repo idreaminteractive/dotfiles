@@ -316,7 +316,7 @@ vim.defer_fn(function()
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
 
-    highlight = { enable = true, },
+    highlight = { enable = true, additional_vim_regex_highlighting = false, },
     indent = { enable = true },
     incremental_selection = {
       enable = true,
@@ -553,25 +553,19 @@ vim.keymap.set('n', 'N', 'Nzz')
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 
---
--- local treesitter_parser_config = require "nvim-treesitter.parsers".get_parser_configs()
--- treesitter_parser_config.templ = {
---   install_info = {
---     url = "https://github.com/vrischmann/tree-sitter-templ.git",
---     files = { "src/parser.c", "src/scanner.c" },
---     branch = "master",
---   },
--- }
---
--- --
---
--- vim.treesitter.language.register('templ', 'templ')
--- local lspconfig = require("lspconfig")
+-- All this stuff below is for templ + the stuff in config / queries
+local treesitter_parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+treesitter_parser_config.templ = {
+  install_info = {
+    url = "https://github.com/vrischmann/tree-sitter-templ.git",
+    files = { "src/parser.c", "src/scanner.c" },
+    branch = "master",
+  },
+}
 
--- local configs = require("lspconfig.configs")
--- dumpTable(configs['templ'], 2)
+--
 
--- local util = require("lspconfig.util")
+vim.treesitter.language.register('templ', 'templ')
 --
 -- pls templ
 vim.filetype.add({
@@ -579,5 +573,3 @@ vim.filetype.add({
     templ = 'templ',
   }
 })
-
-vim.treesitter.language.register('html', 'templ')
