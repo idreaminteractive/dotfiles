@@ -5,7 +5,6 @@ Simple dotfiles to use with Gitpod.
 # Todo
 
 - Moving blocks of text
-- install trouble diagnostics
 - Finding proper shortcuts for harpoon + nvim tree
 
 # Reminder Sheet
@@ -17,7 +16,8 @@ Simple dotfiles to use with Gitpod.
 - `0` start of line
 - `<leader>?` - find recent opened
 - `<leader>gf` - git files
-- `<leader>e` - open diags
+- `<leader>xx` - open trouble
+- `<leader>e` - open nvim tree
 - `gd` - goto def
 - `gr` - goto references
 - `gI` - goto Implementation

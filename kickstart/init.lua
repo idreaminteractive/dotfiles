@@ -582,3 +582,23 @@ require("nvim-tree").setup({
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
   noremap = true
 })
+
+-- trouble
+vim.keymap.set("n", "<leader>xx", function() require("trouble").open() end)
+vim.keymap.set("n", "<leader>xw", function() require("trouble").open("workspace_diagnostics") end)
+vim.keymap.set("n", "<leader>xd", function() require("trouble").open("document_diagnostics") end)
+vim.keymap.set("n", "<leader>xq", function() require("trouble").open("quickfix") end)
+vim.keymap.set("n", "<leader>xl", function() require("trouble").open("loclist") end)
+vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") end)
+
+-- harpoon
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+
+vim.keymap.set("n", "<C-i>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<C-o>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<C-p>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<C-[>", function() ui.nav_file(4) end)
