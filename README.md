@@ -5,6 +5,7 @@ Simple dotfiles to use with Gitpod.
 # Todo
 
 - Moving blocks of text
+- install trouble diagnostics
 - Finding proper shortcuts for harpoon + nvim tree
 
 # Reminder Sheet
