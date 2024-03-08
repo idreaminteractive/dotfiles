@@ -14,7 +14,7 @@ chmod u+x starship.sh
 ./starship.sh -y
 
 # use our thing
-cat /home/gitpod/.dotfiles/.bashrc | tee -a ~/.bashrc >/dev/null
+cat /home/gitpod/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
 # ripgrep
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
@@ -50,7 +50,7 @@ go install github.com/a-h/templ/cmd/templ@latest
 
 # run tmux
 # copy our bindings.
-cp -r /home/gitpod/.dotfiles/.tmux.conf ~/.tmux.conf
+cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
 
 
 # Auto start tmux on SSH or xtermjs
