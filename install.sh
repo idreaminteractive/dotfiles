@@ -54,11 +54,11 @@ cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
 
 
 # Auto start tmux on SSH or xtermjs
-# cat >>"$HOME/.bashrc" <<'EOF'
-# if test ! -v TMUX && (test -v SSH_CONNECTION || test "$PPID" == "$(pgrep -f '/ide/xterm/bin/node /ide/xterm/index.cjs' | head -n1)"); then {
-#   if ! tmux has-session 2>/dev/null; then {
-#     tmux new-session -n "editor" -ds "gitpod"
-#   } fi
-#     exec tmux attach
-# } fi
-# EOF
+ cat >>"$HOME/.bashrc" <<'EOF'
+ if test ! -v TMUX && (test -v SSH_CONNECTION || test "$PPID" == "$(pgrep -f '/ide/xterm/bin/node /ide/xterm/index.cjs' | head -n1)"); then {
+   if ! tmux has-session 2>/dev/null; then {
+     tmux new-session -n "editor" -ds "gitpod"
+   } fi
+     exec tmux attach
+ } fi
+ EOF

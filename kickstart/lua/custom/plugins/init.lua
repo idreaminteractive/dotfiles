@@ -3,6 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 
+vim.filetype.add { extension = { templ = 'templ' } }
 return {
   'thePrimeagen/vim-be-good',
   lazy = false,
