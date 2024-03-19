@@ -544,7 +544,17 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-
+        html = {
+          init_options = {
+            configurationSection = { 'html', 'css', 'javascript' },
+            embeddedLanguages = {
+              css = true,
+              javascript = true,
+            },
+            provideFormatter = false,
+          },
+        },
+        htmx = { filetypes = { 'html', 'templ' } },
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
