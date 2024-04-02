@@ -2,18 +2,10 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+
+vim.filetype.add { extension = { templ = 'templ' } }
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, { pattern = { '*.templ' }, callback = vim.lsp.buf.format })
 return {
-	-- { "tjdevries/templ.nvim",    lazy = false },
-	{ "nvim-tree/nvim-tree.lua", lazy = false },
-	{ 'ThePrimeagen/harpoon' },
-	{'ThePrimeagen/vim-be-good'}, 
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
-	}
+  'thePrimeagen/vim-be-good',
+  lazy = false,
 }
