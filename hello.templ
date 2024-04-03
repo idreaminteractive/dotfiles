@@ -6,6 +6,7 @@ import "fmt"
 // this works better than i would expect.
 templ Hello(name string) {
 	<div>Hello, { name }</div>
+	<div>{ fmt.Print("hello")}</div>
 	<ul>
 		for i := 0 ; i <= 10; i ++ {
 			<li>Potato { strconv.Itoa(i) }</li>

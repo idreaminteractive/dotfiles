@@ -37,8 +37,11 @@ cd $GITPOD_REPO_ROOT
 cp /home/gitpod/.dotfiles/starship.toml ~/.config/starship.toml
 starship preset bracketed-segments -o ~/.config/starship.toml
 
-nvim --headless "+Lazy! sync" +qa
-nvim --headless "+TSInstall templ" +qa
+nvim --headless +"Lazy! sync" +qa
+ # nvim --headless +"TSInstall templ" +qa
+
+nvim --headless +"MasonInstall gopls" +q
+# nvim --headless +"MasonInstall lua-language-server stylua" +q
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
