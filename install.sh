@@ -19,6 +19,13 @@ cat /home/gitpod/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
 
+# install nvim
+ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+ chmod u+x nvim.appimage
+ ./nvim.appimage --appimage-extract
+ ./squashfs-root/AppRun --version
+ sudo mv squashfs-root /
+ sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 
 cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
 
@@ -44,11 +51,11 @@ cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
 
 
 # Auto start tmux on SSH or xtermjs
- cat >>"$HOME/.bashrc" <<'EOF'
- if test ! -v TMUX && (test -v SSH_CONNECTION || test "$PPID" == "$(pgrep -f '/ide/xterm/bin/node /ide/xterm/index.cjs' | head -n1)"); then {
-   if ! tmux has-session 2>/dev/null; then {
-     tmux new-session -n "editor" -ds "gitpod"
-   } fi
-     exec tmux attach
- } fi
- EOF
+# cat >>"$HOME/.bashrc" <<'EOF'
+# if test ! -v TMUX && (test -v SSH_CONNECTION || test "$PPID" == "$(pgrep -f '/ide/xterm/bin/node /ide/xterm/index.cjs' | head -n1)"); then {
+#   if ! tmux has-session 2>/dev/null; then {
+#     tmux new-session -n "editor" -ds "gitpod"
+##   } fi
+#     exec tmux attach
+# } fi
+# EOF
