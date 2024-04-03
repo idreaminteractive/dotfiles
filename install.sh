@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # get tmux
-sudo apt-get -y install tmux
+sudo apt-get -y install tmux exa
 
 
 # download and install starship prompt
