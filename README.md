@@ -7,6 +7,16 @@ Simple dotfiles to use with Gitpod.
 - Moving blocks of text
 - Finding proper shortcuts for harpoon + nvim tree
 
+
+# TMUX Cheatsheet
+
+- `<C-a>+c` - Create new screen
+- `<C-a>+n` - Cycle screens
+- `<C-a>+#` - Goto screen number
+- `<C-a>+%` - Split pane vertically
+- `<C-a>+"` - Split pane horizontally
+- `<C-a>+hjkl` - Move panes
+
 # Reminder Sheet
 
 - `O` - Insert above cursor
