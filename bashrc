@@ -22,7 +22,7 @@ if [ ! -e ~/.gitconfigured ]; then
     && git config --global alias.d "diff" \
     && git config --global alias.ds "diff --stat" \
     && git config --global alias.dc "diff --cached" \
-    && git config --global alias.s "status -s" \
+    && git config --global alias.s "status" \
     && git config --global alias.co "checkout" \
     && git config --global alias.cob "checkout -b" \
     && git config --global alias.b "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'" \
