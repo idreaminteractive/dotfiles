@@ -10,8 +10,7 @@ alias vim="nvim"
 if [ ! -e ~/.gitconfigured ]; then
     touch ~/.gitconfigured
     git config --global push.default simple \
-    && git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" \
-    && git config --global alias.l "log --pretty=format:'%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --date=short" \
+    && git config --global alias.l "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" \
     && git config --global alias.a "add" \
     && git config --global alias.ap "add -p" \
     && git config --global alias.c "commit --verbose" \
