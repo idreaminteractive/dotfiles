@@ -13,7 +13,7 @@ if [ ! -e ~/.gitconfigured ]; then
     && git config --global alias.l "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" \
     && git config --global alias.a "add" \
     && git config --global alias.ap "add -p" \
-    && git config --global alias.ad "add ." \    
+    && git config --global alias.ad "add ." \
     && git config --global alias.c "commit --verbose" \
     && git config --global alias.ca "commit -a --verbose" \
     && git config --global alias.cm "commit -m" \
