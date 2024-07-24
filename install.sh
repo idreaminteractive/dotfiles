@@ -20,13 +20,14 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
 
 # install nvim
- curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+ curl -LO https://github.com/neovim/neovim/releases/v0.10.1/download/nvim.appimage
  chmod u+x nvim.appimage
  ./nvim.appimage --appimage-extract
  ./squashfs-root/AppRun --version
  sudo mv squashfs-root /
  sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 
+mkdir -p /home/gitpod/.config/nvim
 cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
 
 # goto home
@@ -45,8 +46,6 @@ nvim --headless +"MasonInstall gopls" +q
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# add some other bits
-#go install github.com/a-h/templ/cmd/templ@latest
 
 # run tmux
 # copy our bindings.
