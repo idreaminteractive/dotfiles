@@ -43,12 +43,12 @@ starship preset bracketed-segments -o ~/.config/starship.toml
 # nvim --headless +"MasonInstall gopls" +q
 # nvim --headless +"MasonInstall lua-language-server stylua" +q
 
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
 # run tmux
 # copy our bindings.
-# cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
+cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
 
 
 # Auto start tmux on SSH or xtermjs
