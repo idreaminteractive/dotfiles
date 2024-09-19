@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# get tmux
-sudo apt-get -y install tmux exa
-
-
 # download and install starship prompt
 curl -sS https://starship.rs/install.sh --output starship.sh
 
@@ -16,40 +12,43 @@ chmod u+x starship.sh
 # use our thing
 cat /home/gitpod/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
 # ripgrep
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
-sudo dpkg -i ripgrep_13.0.0_amd64.deb
 
-# install nvim
- curl -LO https://github.com/neovim/neovim/releases/v0.10.1/download/nvim.appimage
- chmod u+x nvim.appimage
- ./nvim.appimage --appimage-extract
- ./squashfs-root/AppRun --version
- sudo mv squashfs-root /
- sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+sudo apt update
+sudo apt install -ynvim make gcc ripgrep unzip git xclip curl tmux exa
 
-mkdir -p /home/gitpod/.config/nvim
-cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
+# Now we install nvim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim-linux64
+sudo mkdir -p /opt/nvim-linux64
+sudo chmod a+rX /opt/nvim-linux64
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
+
+# make it available in /usr/local/bin, distro installs to /usr/bin
+sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/local/bin/
+
+# mkdir -p /home/gitpod/.config/nvim
+git clone https://github.com/idreaminteractive/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+# cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
 
 # goto home
 cd $GITPOD_REPO_ROOT
-
 
 # load our starship stuff
 cp /home/gitpod/.dotfiles/starship.toml ~/.config/starship.toml
 starship preset bracketed-segments -o ~/.config/starship.toml
 
-nvim --headless +"Lazy! sync" +qa
+# nvim --headless +"Lazy! sync" +qa
  # nvim --headless +"TSInstall templ" +qa
 
-nvim --headless +"MasonInstall gopls" +q
+# nvim --headless +"MasonInstall gopls" +q
 # nvim --headless +"MasonInstall lua-language-server stylua" +q
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
 # run tmux
 # copy our bindings.
-cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
+# cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
 
 
 # Auto start tmux on SSH or xtermjs

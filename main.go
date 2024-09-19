@@ -11,6 +11,7 @@ func main() {
 	component := hello("John")
 	fmt.Print("jdasd")
 	fmt.Print("hey")
+	
 	http.Handle("/", templ.Handler(component))
 
 	fmt.Println("Listening on :3000")
