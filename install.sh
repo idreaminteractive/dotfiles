@@ -14,7 +14,7 @@ cat /home/gitpod/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
 # ripgrep
 
 sudo apt update
-sudo apt install -ynvim make gcc ripgrep unzip git xclip curl tmux exa
+sudo apt install -y make gcc ripgrep unzip git xclip curl tmux exa
 
 # Now we install nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
