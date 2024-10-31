@@ -28,7 +28,7 @@ if [ ! -e ~/.gitconfigured ]; then
     && git config --global alias.b "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'" \
     && git config --global alias.la "!git config -l | grep alias | cut -c 7-" \
     && git config --global alias.p "push" \
-    && git config --global alias.pu "push -u origin" \
+    && git config --global alias.pu "push -u origin $(git branch --show-current)" \
     || rm -f ~/.gitconfigured
 fi
 
