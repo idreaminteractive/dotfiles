@@ -10,7 +10,7 @@ chmod u+x starship.sh
 ./starship.sh -y
 
 # use our thing
-cat /home/gitpod/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
+cat /home/vscode/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
 # ripgrep
 
 sudo apt update
@@ -30,10 +30,10 @@ sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/local/bin/
 git clone https://github.com/idreaminteractive/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 # goto home
-cd $GITPOD_REPO_ROOT
+cd ~
 
 # load our starship stuff
-cp /home/gitpod/.dotfiles/starship.toml ~/.config/starship.toml
+cp /home/vscode/.dotfiles/starship.toml ~/.config/starship.toml
 starship preset bracketed-segments -o ~/.config/starship.toml
 
 # nvim --headless +"Lazy! sync" +qa
@@ -47,14 +47,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # run tmux
 # copy our bindings.
-cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
+cp -r /home/vscode/.dotfiles/tmux.conf ~/.tmux.conf
 
 
 # Auto start tmux on SSH or xtermjs
 # cat >>"$HOME/.bashrc" <<'EOF'
 # if test ! -v TMUX && (test -v SSH_CONNECTION || test "$PPID" == "$(pgrep -f '/ide/xterm/bin/node /ide/xterm/index.cjs' | head -n1)"); then {
 #   if ! tmux has-session 2>/dev/null; then {
-#     tmux new-session -n "editor" -ds "gitpod"
+#     tmux new-session -n "editor" -ds "vscode"
 ##   } fi
 #     exec tmux attach
 # } fi

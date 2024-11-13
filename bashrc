@@ -32,4 +32,4 @@ if [ ! -e ~/.gitconfigured ]; then
 fi
 
 
-export PATH=$PATH:/home/gitpod/.local/bin
+export PATH=$PATH:/home/vscode/.local/bin
