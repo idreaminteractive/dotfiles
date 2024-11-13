@@ -26,9 +26,8 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 # make it available in /usr/local/bin, distro installs to /usr/bin
 sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/local/bin/
 
-# mkdir -p /home/gitpod/.config/nvim
+
 git clone https://github.com/idreaminteractive/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-# cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
 
 # goto home
 cd $GITPOD_REPO_ROOT
