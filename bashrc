@@ -9,7 +9,7 @@ alias vim="nvim"
 # Git config
 alias gs='git status -sb'
 
-alias ga='git add -A'
+alias ga='git add .'
 alias gap='ga -p'
 
 alias gbr='git branch -v'
@@ -21,7 +21,7 @@ gc() {
 }
 
 alias gch='git cherry-pick'
-
+alias gca='git commit -am'
 alias gcm='git commit -v --amend'
 
 alias gco='git checkout'
@@ -46,7 +46,7 @@ alias gla='gl --all'
 alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 
-alias gp='git push'
+alias gps='git push'
 alias gpthis='gp origin -u $(git_current_branch)'
 
 alias grb='git rebase -p'
