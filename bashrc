@@ -7,29 +7,63 @@ alias lla="exa -l -g --icons --all"
 alias vim="nvim"
 
 # Git config
-if [ ! -e ~/.gitconfigured ]; then
-    touch ~/.gitconfigured
-    git config --global push.default simple \
-    && git config --global alias.l "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" \
-    && git config --global alias.a "add" \
-    && git config --global alias.ap "add -p" \
-    && git config --global alias.ad "add ." \
-    && git config --global alias.c "commit --verbose" \
-    && git config --global alias.ca "commit -a --verbose" \
-    && git config --global alias.cm "commit -m" \
-    && git config --global alias.cam "commit -am" \
-    && git config --global alias.m "commit --amend --verbose" \
-    && git config --global alias.d "diff" \
-    && git config --global alias.ds "diff --stat" \
-    && git config --global alias.dc "diff --cached" \
-    && git config --global alias.s "status" \
-    && git config --global alias.co "checkout" \
-    && git config --global alias.cob "checkout -b" \
-    && git config --global alias.b "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'" \
-    && git config --global alias.la "!git config -l | grep alias | cut -c 7-" \
-    && git config --global alias.p "push" \
-    || rm -f ~/.gitconfigured
-fi
+alias gs='git status -sb'
+
+alias ga='git add -A'
+alias gap='ga -p'
+
+alias gbr='git branch -v'
+
+gc() {
+  git diff --cached | grep '\btap[ph]\b' >/dev/null &&
+    echo "\e[0;31;29mOops, there's a #tapp or similar in that diff.\e[0m" ||
+    git commit -v "$@"
+}
+
+alias gch='git cherry-pick'
+
+alias gcm='git commit -v --amend'
+
+alias gco='git checkout'
+alias gcob='git checkout -b'
+
+alias gd='git diff -M'
+alias gd.='git diff -M --color-words="."'
+alias gdc='git diff --cached -M'
+alias gdc.='git diff --cached -M --color-words="."'
+
+alias gf='git fetch'
+
+# Helper function.
+git_current_branch() {
+  cat "$(git rev-parse --git-dir 2>/dev/null)/HEAD" | sed -e 's/^.*refs\/heads\///'
+}
+
+alias glog='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"'
+alias gl='glog --graph'
+alias gla='gl --all'
+
+alias gm='git merge --no-ff'
+alias gmf='git merge --ff-only'
+
+alias gp='git push'
+alias gpthis='gp origin -u $(git_current_branch)'
+
+alias grb='git rebase -p'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grbi='git rebase -i'
+
+alias gr='git reset'
+alias grh='git reset --hard HEAD'
+alias grsh='git reset --soft HEAD~'
+
+alias grv='git remote -v'
+
+alias gst='git stash'
+alias gstp='git stash pop'
+
+alias gup='git pull'
 
 
 export PATH=$PATH:/home/gitpod/.local/bin
