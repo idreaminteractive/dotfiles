@@ -47,7 +47,7 @@ alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 
 alias gps='git push'
-alias gpthis='gp origin -u $(git_current_branch)'
+alias gpthis='gps origin -u $(git_current_branch)'
 
 alias grb='git rebase -p'
 alias grba='git rebase --abort'
