@@ -22,7 +22,8 @@ gc() {
 
 alias gch='git cherry-pick'
 alias gca='git commit -am'
-alias gcm='git commit -v --amend'
+# alias gcm='git commit -v --amend'
+alias gcm='gca'
 
 alias gco='git checkout'
 alias gcob='git checkout -b'
