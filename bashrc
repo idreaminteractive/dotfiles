@@ -1,4 +1,4 @@
-eval "$(starship init bash)"
+
 
 alias ll="exa -l -g --icons"
 alias llt="exa -1 --icons --tree"
@@ -67,4 +67,5 @@ alias gstp='git stash pop'
 alias gup='git pull'
 
 
+export PATH=$PATH:/home/vscode/.local/bin
 export PATH=$PATH:/home/gitpod/.local/bin
