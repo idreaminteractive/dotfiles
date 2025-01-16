@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # download and install starship prompt
-curl -sS https://starship.rs/install.sh --output starship.sh
+# curl -sS https://starship.rs/install.sh --output starship.sh
 
 # make it runnable
-chmod u+x starship.sh
+# chmod u+x starship.sh
 
 # install starship without a prompt
-./starship.sh -y
+# ./starship.sh -y
 
 # use our thing
 cat /home/gitpod/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
@@ -31,11 +31,11 @@ git clone https://github.com/idreaminteractive/kickstart.nvim.git "${XDG_CONFIG_
 # cp -r /home/gitpod/.dotfiles/kickstart ~/.config/nvim
 
 # goto home
-cd $GITPOD_REPO_ROOT
+cd $HOME
 
 # load our starship stuff
-cp /home/gitpod/.dotfiles/starship.toml ~/.config/starship.toml
-starship preset bracketed-segments -o ~/.config/starship.toml
+# cp /home/gitpod/.dotfiles/starship.toml ~/.config/starship.toml
+# starship preset bracketed-segments -o ~/.config/starship.toml
 
 # nvim --headless +"Lazy! sync" +qa
  # nvim --headless +"TSInstall templ" +qa
@@ -48,7 +48,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # run tmux
 # copy our bindings.
-cp -r /home/gitpod/.dotfiles/tmux.conf ~/.tmux.conf
+cp -r $HOME/.dotfiles/tmux.conf ~/.tmux.conf
 
 
 # Auto start tmux on SSH or xtermjs
