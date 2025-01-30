@@ -1,19 +1,19 @@
 #!/bin/bash
 
 # download and install starship prompt
-# curl -sS https://starship.rs/install.sh --output starship.sh
+curl -sS https://starship.rs/install.sh --output starship.sh
 
 # make it runnable
-# chmod u+x starship.sh
+chmod u+x starship.sh
 
 # install starship without a prompt
-# ./starship.sh -y
+./starship.sh -y
 
 # use our thing
 cat ~/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
 # ripgrep
 
-sudo apt update
+# sudo apt update
 # sudo apt install -y make gcc ripgrep unzip xclip exa
 sudo apt install -y exa
 
