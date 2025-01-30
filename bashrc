@@ -69,3 +69,5 @@ alias gup='git pull'
 
 export PATH=$PATH:/home/vscode/.local/bin
 export PATH=$PATH:/home/gitpod/.local/bin
+
+eval "$(starship init bash)"
