@@ -7,7 +7,7 @@ curl -sS https://starship.rs/install.sh --output starship.sh
 chmod u+x starship.sh
 
 # install starship without a prompt
-./starship.sh -y
+./starship.sh -y >/dev/null
 
 # use our thing
 cat ~/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
