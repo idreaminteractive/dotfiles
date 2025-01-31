@@ -13,7 +13,7 @@ chmod u+x starship.sh
 ./starship.sh -y >/dev/null
 
 # use our thing
-cat ~/.dotfiles/bashrc | tee -a ~/.bashrc >/dev/null
+cat ~/.dotfiles/bashrc | tee -a ~/.bash_aliases >/dev/null
 
 # goto home
 cd $HOME
