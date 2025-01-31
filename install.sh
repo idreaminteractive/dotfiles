@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install -y exa
+
 # download and install starship prompt
 curl -sS https://starship.rs/install.sh --output starship.sh
 
