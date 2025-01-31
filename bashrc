@@ -1,10 +1,8 @@
 
-
-alias ll="exa -l -g --icons"
-alias llt="exa -1 --icons --tree"
-alias lla="exa -l -g --icons --all"
-
-alias vim="nvim"
+alias ls='lsd'
+alias ll="ls -l"
+alias llt="ls --tree"
+alias lla="ls -la"
 
 # Git config
 alias gs='git status -sb'
