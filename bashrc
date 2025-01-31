@@ -1,5 +1,6 @@
 
 alias ls='lsd'
+alias l='ls'
 alias ll="ls -l"
 alias llt="ls --tree"
 alias lla="ls -la"
