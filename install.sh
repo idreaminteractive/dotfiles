@@ -20,7 +20,7 @@ chmod u+x starship.sh
 ./starship.sh -y >/dev/null
 
 # use our thing
-cat ~/.dotfiles/bashrc | tee  ~/.bash_aliases >/dev/null
+cat ~/.dotfiles/bash_aliases | tee  ~/.bash_aliases >/dev/null
 
 # goto home
 cd $HOME
@@ -28,4 +28,3 @@ cd $HOME
 # load our starship stuff
 cp $HOME/.dotfiles/starship.toml $HOME/.config/starship.toml
 starship preset bracketed-segments -o ~/.config/starship.toml
-
