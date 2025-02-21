@@ -48,5 +48,8 @@ fi
 
 mkdir -p /workspace/.config
 
-# clone out our nvim config 
-git clone https://github.com/idreaminteractive/kickstart.nvim.git /workspace/.config/nvim 
+TARGET_NVIM_CONFIG_FOLDER="/workspace/.config/nvim"
+# clone out our nvim config  - only if it's not already here
+if [ ! -d "$TARGET_NVIM_CONFIG_FOLDER"]; then 
+  git clone https://github.com/idreaminteractive/kickstart.nvim.git /workspace/.config/nvim 
+fi
