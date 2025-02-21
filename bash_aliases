@@ -70,6 +70,6 @@ export PATH=$PATH:/home/vscode/.local/bin
 export PATH=$PATH:/home/gitpod/.local/bin
 
 export XDG_CONFIG_HOME=/workspace/.config
-export $XDG_DATA_HOME=/workspace/data/.local
+export XDG_DATA_HOME=/workspace/data/.local
 
 eval "$(starship init bash)"
