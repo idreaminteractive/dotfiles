@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # sudo apt update
 # sudo apt install -y lsd
@@ -28,3 +28,23 @@ cd $HOME
 # load our starship stuff
 cp $HOME/.dotfiles/starship.toml $HOME/.config/starship.toml
 starship preset bracketed-segments -o ~/.config/starship.toml
+
+
+# check if /workspace exists, if so, add the mise toml to the root of workspace
+
+TARGET_DIR="/workspace"
+TARGET_FILE="${TARGET_DIR}/mise.toml"
+
+# Check if /workspace exists and is writable
+if [ -d "$TARGET_DIR" ] && [ -w "$TARGET_DIR" ]; then
+  # Overwrite the file with the new contents
+  cat > "$TARGET_FILE" <<'EOF'
+[tools]
+neovim = "latest"
+zellij = "latest"
+EOF
+  echo "File written to ${TARGET_FILE}."
+else
+  echo "Error: Directory ${TARGET_DIR} either does not exist or is not writable." >&2
+  exit 1
+fi
