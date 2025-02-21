@@ -47,3 +47,6 @@ else
 fi
 
 mkdir -p /workspace/.config
+
+# clone out our nvim config 
+git clone https://github.com/idreaminteractive/kickstart.nvim.git /workspace/.config/nvim 
