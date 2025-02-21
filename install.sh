@@ -27,7 +27,6 @@ cd $HOME
 cp $HOME/.dotfiles/starship.toml $HOME/.config/starship.toml
 starship preset bracketed-segments -o ~/.config/starship.toml
 
-
 # check if /workspace exists, if so, add the mise toml to the root of workspace
 
 TARGET_DIR="/workspace"
@@ -47,3 +46,4 @@ else
   exit 1
 fi
 
+mkdir -p /workspace/.config
