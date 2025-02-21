@@ -1,7 +1,5 @@
 #!/bin/bash -e
 
-# sudo apt update
-# sudo apt install -y lsd
 
 curl -LO https://github.com/lsd-rs/lsd/releases/download/v1.1.5/lsd_1.1.5_amd64.deb
 sudo apt update
