@@ -45,7 +45,7 @@ else
   echo "Error: Directory ${TARGET_DIR} either does not exist or is not writable." >&2
   exit 1
 fi
-
+mkdir -p /workspace/data/.local
 mkdir -p /workspace/.config
 
 TARGET_NVIM_CONFIG_FOLDER="/workspace/.config/nvim"
