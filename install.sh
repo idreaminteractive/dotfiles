@@ -47,3 +47,5 @@ else
   echo "Error: Directory ${TARGET_DIR} either does not exist or is not writable." >&2
   exit 1
 fi
+
+mkdir -p /workspace/.config
