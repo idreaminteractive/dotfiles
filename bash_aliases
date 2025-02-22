@@ -77,8 +77,3 @@ eval "$(starship init bash)"
 
 
 
-# Check if /workspace exists 
-if [ -d "/workspace" ] ; then
-  cd /workspace
-  zellij
-fi
