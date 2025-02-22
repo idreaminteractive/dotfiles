@@ -73,3 +73,12 @@ export XDG_CONFIG_HOME=/workspace/.config
 export XDG_DATA_HOME=/workspace/data/.local
 export ZELLIJ_CONFIG_DIR=/workspace/data/.config/zellij
 eval "$(starship init bash)"
+
+
+
+
+# Check if /workspace exists 
+if [ -d "/workspace" ] ; then
+  cd /workspace
+  zellij
+fi
