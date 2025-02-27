@@ -39,6 +39,7 @@ if [ -d "$TARGET_DIR" ] && [ -w "$TARGET_DIR" ]; then
 [tools]
 neovim = "latest"
 zellij = "latest"
+lazygit = "latest"
 EOF
   echo "File written to ${TARGET_FILE}."
 else
