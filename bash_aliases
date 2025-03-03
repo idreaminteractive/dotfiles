@@ -65,6 +65,8 @@ alias gstp='git stash pop'
 alias vim='nvim'
 alias gup='git pull'
 
+alias lz='lazygit'
+
 
 export PATH=$PATH:/home/vscode/.local/bin
 export PATH=$PATH:/home/gitpod/.local/bin
