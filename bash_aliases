@@ -64,6 +64,7 @@ alias gst='git stash'
 alias gstp='git stash pop'
 alias vim='nvim'
 alias gup='git pull'
+alias gwip='git commit -am "chore: wip"'
 
 alias lz='lazygit'
 
