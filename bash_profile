@@ -25,3 +25,6 @@ cd /workspace
 if [[ -z "$ZELLIJ" ]]; then 
    zellij
 fi
+
+
+git config --global core.editor "vim"
