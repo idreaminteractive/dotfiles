@@ -6,13 +6,6 @@ sudo apt update
 sudo apt install ./lsd_1.1.5_amd64.deb
 rm lsd_1.1.5_amd64.deb
 
-wget https://github.com/astral-sh/uv/releases/download/0.6.14/uv-x86_64-unknown-linux-gnu.tar.gz
-tar -zxvf uv-x86_64-unknown-linux-gnu.tar.gz
-sudo cp uv-x86_64-unknown-linux-gnu/* /usr/local/bin/
-
-
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv tool install harlequin
 
 # download and install starship prompt
 curl -sS https://starship.rs/install.sh --output starship.sh
