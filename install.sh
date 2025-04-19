@@ -6,8 +6,9 @@ sudo apt update
 sudo apt install ./lsd_1.1.5_amd64.deb
 rm lsd_1.1.5_amd64.deb
 
-
-
+wget https://github.com/jorgerojas26/lazysql/releases/download/v0.3.7/lazysql_Linux_x86_64.tar.gz
+tar -zxvf lazysql_Linux_x86_64.tar.gz
+sudo mv lazysql /usr/local/bin/
 # download and install starship prompt
 curl -sS https://starship.rs/install.sh --output starship.sh
 
