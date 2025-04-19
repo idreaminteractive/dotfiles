@@ -6,6 +6,11 @@ sudo apt update
 sudo apt install ./lsd_1.1.5_amd64.deb
 rm lsd_1.1.5_amd64.deb
 
+
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv tool install harlequin
+
 # download and install starship prompt
 curl -sS https://starship.rs/install.sh --output starship.sh
 
