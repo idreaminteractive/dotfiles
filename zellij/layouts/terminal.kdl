@@ -8,6 +8,5 @@ layout {
 
     tab name="terminal" {
         pane borderless=true
-        // pane size="20%"
     }
 }

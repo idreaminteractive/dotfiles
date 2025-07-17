@@ -11,7 +11,10 @@ layout {
     }
     tab name="terminal" {
         pane borderless=true
-        // pane size="20%"
+    }
+    
+    tab name="agent" {
+        pane borderless=true
     }
 }
 
