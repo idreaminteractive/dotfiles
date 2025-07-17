@@ -16,6 +16,10 @@ chmod u+x starship.sh
 # install starship without a prompt
 ./starship.sh -y >/dev/null
 
+# install open code
+curl -fsSL https://opencode.ai/install | bash
+
+
 # use our thing
 cat ~/.dotfiles/bash_aliases | tee  ~/.bash_aliases >/dev/null
 cat ~/.dotfiles/bash_profile | tee ~/.bash_profile >/dev/null
