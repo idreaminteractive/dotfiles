@@ -8,5 +8,6 @@ layout {
 
     tab name="terminal" {
         pane borderless=true
+        pane borderless=true
     }
 }
