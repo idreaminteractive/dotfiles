@@ -8,10 +8,10 @@ layout {
 
     tab name="editor" focus=true {
         pane  split_direction="vertical" {
-            pane borderless=true command="nvim" {
+            pane  command="nvim" {
                 size "60%"
             }
-            pane borderless=true {
+            pane  {
                 size "40%"
             }
         }
