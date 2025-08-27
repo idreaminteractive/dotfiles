@@ -2,8 +2,8 @@
 
 
 curl -LO https://github.com/lsd-rs/lsd/releases/download/v1.1.5/lsd_1.1.5_amd64.deb
-sudo apt update
-sudo apt install ./lsd_1.1.5_amd64.deb
+sudo apt update  --allow-releaseinfo-change
+sudo apt install -y ./lsd_1.1.5_amd64.deb
 rm lsd_1.1.5_amd64.deb
 
 
