@@ -3,6 +3,7 @@
 curl -LO https://github.com/lsd-rs/lsd/releases/download/v1.1.5/lsd_1.1.5_amd64.deb
 sudo apt update --allow-releaseinfo-change
 sudo apt install -y ./lsd_1.1.5_amd64.deb
+sudo apt-get install -y bison
 rm lsd_1.1.5_amd64.deb
 
 # download and install starship prompt
