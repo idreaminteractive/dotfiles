@@ -23,6 +23,7 @@ cat ~/.dotfiles/bash_aliases | tee ~/.bash_aliases >/dev/null
 cat ~/.dotfiles/bash_profile | tee ~/.bash_profile >/dev/null
 
 cp -r ~/.dotfiles/zellij /workspace/data/.config/
+cp -r ~/.dotfiles/.tmux.conf /home/flypod/.tmux.conf
 # goto home
 cd $HOME
 
@@ -41,7 +42,6 @@ if [ -d "$TARGET_DIR" ] && [ -w "$TARGET_DIR" ]; then
   cat >"$TARGET_FILE" <<'EOF'
 [tools]
 neovim = "latest"
-zellij = "latest"
 lazygit = "latest"
 tmux = "latest"
 EOF
