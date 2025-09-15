@@ -7,14 +7,14 @@ layout {
     }
 
     tab name="editor" focus=true {
-        pane  split_direction="vertical" {
-            pane  command="nvim" {
-                size "60%"
-            }
-            pane  {
-                size "40%"
-            }
-        }
+        // pane  split_direction="vertical" {
+            pane  command="nvim" //{
+            //     size "60%"
+            // }
+        //     pane  {
+        //         size "40%"
+        //     }
+        // }
     }
     tab name="terminal" {
         pane borderless=true
