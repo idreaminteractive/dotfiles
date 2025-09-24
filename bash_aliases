@@ -74,6 +74,7 @@ export PATH=$PATH:/workspace/data/bin
 export XDG_CONFIG_HOME=/workspace/.config
 export XDG_DATA_HOME=/workspace/data/.local
 export ZELLIJ_CONFIG_DIR=/workspace/data/.config/zellij
+export MIX_INSTALL_ROOT=/workspace/data/.local/mix
 eval "$(starship init bash)"
 
 

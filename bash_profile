@@ -20,11 +20,4 @@ fi
 # the last commands here.
 cd /workspace
 
-# if zellij is enabled, run it with the appropriate config and layout
-# but only if we're not already in a zellij shell
-# if [[ -z "$ZELLIJ" ]]; then
-#    zellij
-# fi
-
-
 # git config --global core.editor "vim"
