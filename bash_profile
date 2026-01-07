@@ -18,6 +18,11 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # the last commands here.
+# Skip shell initialization in Claude Code to avoid conflicts
+if [[ -n "$CLAUDECODE" ]]; then
+    return 0
+fi
+
 cd /workspace
 
 # git config --global core.editor "vim"
