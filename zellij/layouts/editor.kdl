@@ -7,20 +7,17 @@ layout {
     }
 
     tab name="editor" focus=true {
-        // pane  split_direction="vertical" {
             pane  command="nvim" //{
-            //     size "60%"
-            // }
-        //     pane  {
-        //         size "40%"
-        //     }
-        // }
     }
     tab name="terminal" {
         pane borderless=true
     }
     
     tab name="agent" {
+        pane borderless=true
+    }
+
+    tab name="another_terminal" {
         pane borderless=true
     }
 }
