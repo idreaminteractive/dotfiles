@@ -63,7 +63,7 @@ alias grv='git remote -v'
 alias gst='git stash'
 alias gstp='git stash pop'
 alias gup='git pull'
-alias gwip='git commit -am "chore: wip"'
+# don't be lazy.... alias gwip='git commit -am "chore: wip"'
 
 alias lz='lazygit'
 
