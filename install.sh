@@ -42,7 +42,7 @@ if [ -d "$TARGET_DIR" ] && [ -w "$TARGET_DIR" ]; then
   # Overwrite the file with the new contents
   cat >"$TARGET_FILE" <<'EOF'
 [tools]
-neovim = "0.11.4"
+neovim = "latest"
 lazygit = "latest"
 zellij = "latest"
 EOF
