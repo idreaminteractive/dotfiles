@@ -24,7 +24,8 @@ mkdir -p ~/.local/bin
 cat ~/.dotfiles/bash_aliases | tee ~/.bash_aliases >/dev/null
 cat ~/.dotfiles/bash_profile | tee ~/.bash_profile >/dev/null
 
-cp -r ~/.dotfiles/zellij /workspace/data/.config/
+# for now, not customizing zellij
+# cp -r ~/.dotfiles/zellij /workspace/data/.config/
 # goto home
 cd $HOME
 
