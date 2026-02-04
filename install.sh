@@ -54,6 +54,7 @@ else
 fi
 
 # for now overwrite EVERY time?
+rmn -rf ~/.config/nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 
 # mkdir -p /workspace/data/.local
