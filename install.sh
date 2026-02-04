@@ -18,6 +18,8 @@ chmod u+x starship.sh
 # install open code
 curl -fsSL https://opencode.ai/install | bash
 
+mkdir -p ~/.local/bin
+
 # use our thing
 cat ~/.dotfiles/bash_aliases | tee ~/.bash_aliases >/dev/null
 cat ~/.dotfiles/bash_profile | tee ~/.bash_profile >/dev/null
