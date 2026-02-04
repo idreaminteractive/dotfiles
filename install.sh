@@ -51,14 +51,18 @@ else
   echo "Error: Directory ${TARGET_DIR} either does not exist or is not writable." >&2
   exit 1
 fi
-mkdir -p /workspace/data/.local
-mkdir -p /workspace/.config
 
-TARGET_NVIM_CONFIG_FOLDER="/workspace/.config/nvim"
-# clone out our nvim config  - only if it's not already here
-if [ ! -d "$TARGET_NVIM_CONFIG_FOLDER" ]; then
-  git clone https://github.com/idreaminteractive/kickstart.nvim.git /workspace/.config/nvim
-  # git clone https://github.com/idreaminteractive/lazyvim-config /workspace/.config/nvim
-else
-  cd $TARGET_NVIM_CONFIG_FOLDER && git pull
-fi
+# for now overwrite EVERY time?
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+# mkdir -p /workspace/data/.local
+# mkdir -p /workspace/.config
+
+# TARGET_NVIM_CONFIG_FOLDER="/workspace/.config/nvim"
+# # clone out our nvim config  - only if it's not already here
+# if [ ! -d "$TARGET_NVIM_CONFIG_FOLDER" ]; then
+#   git clone https://github.com/idreaminteractive/kickstart.nvim.git /workspace/.config/nvim
+#   # git clone https://github.com/idreaminteractive/lazyvim-config /workspace/.config/nvim
+# else
+#   cd $TARGET_NVIM_CONFIG_FOLDER && git pull
+# fi
