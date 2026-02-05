@@ -13,7 +13,10 @@ mkdir -p ~/.local/bin
 cat ~/.dotfiles/bash_aliases | tee ~/.bash_aliases >/dev/null
 
 
-echo "source ~/.bash_aliases" >> ~/.bashrc
+# only add if it is not already there
+if ! grep -Fxq "source ~/.bash_aliases" ~/.bashrc 2>/dev/null; then
+  echo "source ~/.bash_aliases" >> ~/.bashrc
+fi
 
 
 TARGET_DIR="/workspace"
@@ -34,3 +37,6 @@ fi
 
 rm -rf ~/.config/nvim
 git clone https://github.com/idreaminteractive/lazyvimstarter ~/.config/nvim
+
+curl -L https://github.com/tidewave-ai/tidewave_app/releases/latest/download/tidewave-cli-x86_64-unknown-linux-gnu -o ~/.local/bin/tidewave
+chmod +x ~/.local/bin/tidewave
