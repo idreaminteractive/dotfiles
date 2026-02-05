@@ -9,6 +9,9 @@ mkdir -p ~/.local/bin
 cat ~/.dotfiles/bash_aliases | tee ~/.bash_aliases >/dev/null
 
 
+echo "source ~/.bash_aliases" >> ~/.bashrc
+
+
 TARGET_DIR="/workspace"
 TARGET_FILE="${TARGET_DIR}/mise.toml"
 
