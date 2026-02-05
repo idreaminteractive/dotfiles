@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+
+# install lsd in omarchy
+yay -S lsd
+
 # install open code
 curl -fsSL https://opencode.ai/install | bash
 
