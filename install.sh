@@ -55,7 +55,7 @@ fi
 
 # for now overwrite EVERY time?
 rm -rf ~/.config/nvim
-git clone https://github.com/LazyVim/starter ~/.config/nvim
+git clone https://github.com/idreaminteractive/lazyvimstarter ~/.config/nvim
 
 # mkdir -p /workspace/data/.local
 # mkdir -p /workspace/.config
