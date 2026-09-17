@@ -1,23 +1,20 @@
 #!/bin/bash -e
 
-
 # install lsd in omarchy
 yay -S lsd
 
 # install open code
-curl -fsSL https://opencode.ai/install | bash
+# curl -fsSL https://opencode.ai/install | bash
 
 mkdir -p ~/.local/bin
 
 # use our thing
 cat ~/.dotfiles/bash_aliases | tee ~/.bash_aliases >/dev/null
 
-
 # only add if it is not already there
 if ! grep -Fxq "source ~/.bash_aliases" ~/.bashrc 2>/dev/null; then
-  echo "source ~/.bash_aliases" >> ~/.bashrc
+  echo "source ~/.bash_aliases" >>~/.bashrc
 fi
-
 
 TARGET_DIR="/workspace"
 TARGET_FILE="${TARGET_DIR}/mise.toml"
